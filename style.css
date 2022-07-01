@@ -281,6 +281,12 @@ body{
     margin-bottom: 20px;
 }
 
+.image-wrapper.post-image{
+    overflow: hidden;
+    border-radius: 7px 7px 0 0;
+    line-height: 0;
+}
+
 article.card-horizon {
     display: flex;
     flex-direction: row;
@@ -299,6 +305,12 @@ article.card-horizon .card-post{
     overflow: hidden;
     background-size: 800px 104px;
     flex: 1 0 auto;
+    object-fit: cover;
+}
+
+img{
+    height: auto;
+    max-width: 100%;
     object-fit: cover;
 }
 
@@ -381,19 +393,39 @@ article.card-horizon .card-post{
 .post-item .post-content{
     flex-wrap: wrap;
     height: 100%;
+    flex-direction: column;
 }
 .post-content .post-wrapper{
     grid-template-rows: auto 1fr auto;
+    width: 100%;
 }
+.image{
+    background-color: var(--postBg);
+    background-image: linear-gradient(to right, var(--postBg) 10%, var(--bodyBg) 18%, var(--postBg) 33%);
+    background-image: linear-gradient(to right, #f6f7f8 8%, #e4e4e4 18%, #f6f7f8 33%);
+    background-size: 800px 104px;
+    animation: kilau 1.5s linear infinite;
+    -moz-animation: kilau 1.5s linear infinite;
+    -webkit-animation: kilau 1.5s linear infinite;
+    -o-animation: kilau 1.5s linear infinite;
+}
+.post-wrapper-image{
+    border-radius: 7px 7px 0 0;
+    line-height: 0;
+}
+.post-wrapper-image img{
+    width: 100vw;
+}
+
 .post-wrapper .image-wrapper img{
     border-radius: 12px 12px 0px 0px;
     width: 100%;
 }
 .post-wrapper .title-wrapper h2{
-    font-size: clamp(1rem, calc(1rem + .1vw), 1.5rem);
-    line-height: clamp(1rem, calc(1.9571rem + .1875vw), 1.75rem);
-    font-weight: 400;
+    font-size: clamp(1rem, calc(.8rem + .18vw), 1rem);
+    line-height: clamp(1.5rem, calc(1.4259rem + .3241vw), 1rem);
     margin: 1rem;
+    font-weight: 400;
 }
 
 .post-wrapper .post-info{
@@ -655,7 +687,7 @@ article.card-horizon .card-post{
         text-align: left;
     }
 
-    .menu-item:hover .left-menu-text{
+    .menu-item:hover .left-menu-text, .menu-item:focus .left-menu-text{
         background-color:transparent;
         border-radius: unset;
         opacity: 1;
@@ -685,6 +717,25 @@ article.card-horizon .card-post{
         width: 100% !important;
         height: 40px !important;
         border-radius: 6px !important;
+    }
+
+    .content-main .right-sidebar-container{
+        margin-left: 0rem;
+    }
+
+    .image-wrapper img{
+        width: 100vw !important;
+    }
+    article.card-horizon{
+        flex-direction: column;
+    }
+    .content-container{
+        margin: 0rem 1rem 0rem;
+        flex: 1 1 auto;
+    }
+
+    .post-list-content{
+        gap: 10px;
     }
 }
 
